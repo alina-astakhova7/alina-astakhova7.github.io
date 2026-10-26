@@ -3,7 +3,7 @@ import imgs from '../data/img.json';
 interface Slide { k: string; alt?: string; cap?: string }
 interface Props { slides: Slide[]; ar: string; arMd?: string; arSm?: string; overlay?: boolean; label: string }
 const { slides, ar, arMd = ar, arSm = arMd, overlay = false, label } = Astro.props;
-const meta = imgs as Record<string, { w: number; h: number; mode: string; bg?: string }>;
+const meta = imgs as Record<string, { w: number; h: number; mode: string; bg?: string; sm?: boolean }>;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const hasCaps = slides.some((s) => s.cap);
 ---
@@ -13,7 +13,7 @@ const hasCaps = slides.some((s) => s.cap);
       {slides.map((s, i) => (
         <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label={`${i + 1} / ${slides.length}`}>
           <div class="box" style={`background:${meta[s.k].bg ?? (meta[s.k].mode === 'FIT' ? 'transparent' : '#404040')}`}>
-            <img src={`${base}/img/${s.k}.webp`} alt={s.alt ?? ''} width={meta[s.k].w} height={meta[s.k].h} class={`fit-${meta[s.k].mode}`} loading="lazy" decoding="async" draggable="false" />
+            <img src={`${base}/img/${s.k}.webp`} srcset={meta[s.k].sm ? `${base}/img/${s.k}-800.webp 800w, ${base}/img/${s.k}.webp ${meta[s.k].w}w` : undefined} sizes="(max-width: 599px) 100vw, (max-width: 1239px) 90vw, 1160px" alt={s.alt ?? ''} width={meta[s.k].w} height={meta[s.k].h} class={`fit-${meta[s.k].mode}`} loading="lazy" decoding="async" draggable="false" />
           </div>
         </div>
       ))}

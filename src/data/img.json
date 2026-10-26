@@ -7,48 +7,57 @@
 "9a91726f": {
 "w": 2304,
 "h": 1118,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "06ceb8a1": {
 "w": 2304,
 "h": 1019,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "933e9384": {
 "w": 2300,
 "h": 1534,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "bd516564": {
 "w": 2304,
 "h": 1118,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "a0458fc2": {
 "w": 2304,
 "h": 1595,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "0cbe7655": {
 "w": 1400,
 "h": 1125,
 "mode": "FIT",
-"bg": "#404040"
+"bg": "#404040",
+"sm": true
 },
 "c40c87b5": {
 "w": 1200,
 "h": 675,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "542ae63d": {
 "w": 1250,
 "h": 742,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "c4dea382": {
 "w": 1141,
 "h": 787,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "979c9259": {
 "w": 1000,
@@ -63,73 +72,87 @@
 "826cd632": {
 "w": 1024,
 "h": 729,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "0724d66c": {
 "w": 1920,
 "h": 1080,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "5140b6fb": {
 "w": 1280,
 "h": 1280,
 "mode": "FIT",
-"bg": "#404040"
+"bg": "#404040",
+"sm": true
 },
 "56bceb68": {
 "w": 1748,
 "h": 3532,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "1c5aedee": {
 "w": 1280,
 "h": 1280,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "c9186bb6": {
 "w": 2304,
 "h": 1579,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "9f046fde": {
 "w": 2304,
 "h": 1236,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "aef75c3b": {
 "w": 1195,
 "h": 4096,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "08ee1f25": {
 "w": 1066,
 "h": 4096,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "3ad66c03": {
 "w": 1400,
 "h": 894,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "69799cd9": {
 "w": 1400,
 "h": 722,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "ad4c5dc3": {
 "w": 1400,
 "h": 384,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "63860173": {
 "w": 1400,
 "h": 787,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "0e203f4b": {
 "w": 2304,
 "h": 3403,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "25fc92b9": {
 "w": 496,
@@ -139,136 +162,162 @@
 "b54bb2cf": {
 "w": 1400,
 "h": 757,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "45473673": {
 "w": 1400,
 "h": 1945,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "380de54d": {
 "w": 1400,
 "h": 1891,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "afa1207e": {
 "w": 2304,
 "h": 1535,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "026b9d56": {
 "w": 1400,
 "h": 1610,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "2977949b": {
 "w": 1400,
 "h": 1190,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "0fa098b3": {
 "w": 2304,
 "h": 1801,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "c88e9aa3": {
 "w": 2304,
 "h": 1296,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "34e323b5": {
 "w": 1400,
 "h": 932,
 "mode": "FIT",
-"bg": "#404040"
+"bg": "#404040",
+"sm": true
 },
 "817e1d5f": {
 "w": 1250,
 "h": 770,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "4cae89d7": {
 "w": 1400,
 "h": 834,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "a73892d9": {
 "w": 1400,
 "h": 834,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "b374c63e": {
 "w": 1400,
 "h": 834,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "25a75349": {
 "w": 2181,
 "h": 1113,
-"mode": "FILL"
+"mode": "FILL",
+"sm": true
 },
 "d833bb4b": {
 "w": 1619,
 "h": 1620,
 "mode": "FIT",
-"bg": "#e8ebe9"
+"bg": "#e8ebe9",
+"sm": true
 },
 "41a3c277": {
 "w": 1590,
 "h": 2444,
 "mode": "FIT",
-"bg": "#e8ebe9"
+"bg": "#e8ebe9",
+"sm": true
 },
 "3486b48f": {
 "w": 1202,
 "h": 994,
 "mode": "FIT",
-"bg": "#e8ebe9"
+"bg": "#e8ebe9",
+"sm": true
 },
 "af908ff9": {
 "w": 1195,
 "h": 996,
 "mode": "FIT",
-"bg": "#e8ebe9"
+"bg": "#e8ebe9",
+"sm": true
 },
 "1e6ace45": {
 "w": 1748,
 "h": 3532,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "894e90cb": {
 "w": 1748,
 "h": 3532,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "e6a72fc2": {
 "w": 1748,
 "h": 3532,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "88af20e5": {
 "w": 1748,
 "h": 3532,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "6726ec64": {
 "w": 1748,
 "h": 3532,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "c72cee4d": {
 "w": 1748,
 "h": 3532,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "4985e410": {
 "w": 1748,
 "h": 3532,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 },
 "c6e14122": {
 "w": 1748,
 "h": 3532,
-"mode": "FIT"
+"mode": "FIT",
+"sm": true
 }
 }
