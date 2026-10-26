@@ -207,3 +207,6 @@ b, strong { font-weight: 700; }
 .case-mdk .media img { border-radius: 0; }
 .case-mdk .box { background: transparent !important; display: flex; align-items: center; justify-content: center; border-radius: 0; overflow: visible; }
 .case-mdk .box img { position: absolute; inset: 0 0 auto 0; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 0; }
+
+/* МДК: подписи «До» / «После» — Inter Medium 16, #E8EBE9 */
+.case-mdk .ba figcaption, .case-mdk .after-cap { font-weight: 500; font-size: 16px; color: var(--text); }
