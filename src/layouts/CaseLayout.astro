@@ -1,8 +1,8 @@
 ---
 import Layout from './Layout.astro';
 import Contacts from '../components/Contacts.astro';
-interface Props { label: string; title: string; tags: string[]; tagsHideMobile?: number[]; description: string }
-const { label, title, tags, tagsHideMobile = [], description } = Astro.props;
+interface Props { cls?: string; label: string; title: string; tags: string[]; tagsHideMobile?: number[]; description: string }
+const { cls = "", label, title, tags, tagsHideMobile = [], description } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const home = `${base}/`;
 ---
@@ -16,7 +16,7 @@ const home = `${base}/`;
         <div class="btns"><Contacts /></div>
       </nav>
     </header>
-    <main class="case-card">
+    <main class={`case-card ${cls}`}>
       <div class="case-head">
         <p class="label">{label}</p>
         <div>
