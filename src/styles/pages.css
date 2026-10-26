@@ -202,8 +202,8 @@ b, strong { font-weight: 700; }
 .case-card .lead { margin-top: -28px; }
 @media (max-width: 599px) { .case-card .lead { margin-top: -8px; } }
 @media (max-width: 599px) { .br-d { display: none; } }
-/* МДК: картинки без подложки, со скруглением 8 */
-.case-mdk .media { background: transparent; border-radius: 8px; }
-.case-mdk .media img { border-radius: 8px; }
+/* МДК: картинки без подложки и без скруглений */
+.case-mdk .media { background: transparent; border-radius: 0; }
+.case-mdk .media img { border-radius: 0; }
 .case-mdk .box { background: transparent !important; display: flex; align-items: center; justify-content: center; border-radius: 0; overflow: visible; }
-.case-mdk .box img { position: absolute; inset: 0 0 auto 0; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 8px; }
+.case-mdk .box img { position: absolute; inset: 0 0 auto 0; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 0; }
