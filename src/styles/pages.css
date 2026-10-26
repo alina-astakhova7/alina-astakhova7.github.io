@@ -226,3 +226,5 @@ b, strong { font-weight: 700; }
 }
 /* МДК, мобилка: главная «До / После» в две колонки по 152, как в макете */
 @media (max-width: 599px) { .case-mdk .ba--main { grid-template-columns: 1fr 1fr; gap: 16px; } }
+/* Лента: на планшете и мобилке фото целиком, без обрезки (в макете FIT) */
+@media (max-width: 1023px) { .card .box.card-img-lenta { aspect-ratio: 2320 / 1126; } }
