@@ -206,4 +206,4 @@ b, strong { font-weight: 700; }
 .case-mdk .media { background: transparent; border-radius: 8px; }
 .case-mdk .media img { border-radius: 8px; }
 .case-mdk .box { background: transparent !important; display: flex; align-items: center; justify-content: center; border-radius: 0; overflow: visible; }
-.case-mdk .box img { position: absolute; inset: 0; margin: auto; width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 8px; }
+.case-mdk .box img { position: absolute; inset: 0 0 auto 0; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 8px; }
