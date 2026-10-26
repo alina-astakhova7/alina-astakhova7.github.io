@@ -1,8 +1,8 @@
 ---
 import '../styles/global.css';
 import '../styles/pages.css';
-interface Props { title: string; description: string; image?: string }
-const { title, description, image = 'og.png' } = Astro.props;
+interface Props { title: string; description: string; image?: string; home?: boolean }
+const { title, description, image = 'og.png', home = false } = Astro.props;
 const site = Astro.site ? Astro.site.href.replace(/\/$/, '') : '';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const url = site + Astro.url.pathname;
@@ -33,9 +33,9 @@ const url = site + Astro.url.pathname;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body class={home ? 'is-home' : ''}>
   <div class="grain" aria-hidden="true"></div>
-  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"><i class="g-top"></i><i class="g-bot"></i></div>
   <div class="page"><slot /></div>
   <script>import '../scripts/site.js';</script>
 </body>
