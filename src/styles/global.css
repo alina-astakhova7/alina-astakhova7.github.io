@@ -61,8 +61,6 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   background-image: url("/noise.png");
   background-size: 70px auto;
   opacity: .35;
-  will-change: transform;
-  animation: grain 0.9s steps(1) infinite;
 }
 .page { position: relative; z-index: 1; }
 
