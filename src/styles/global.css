@@ -59,7 +59,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 .grain {
   /* как в макете 1920: Noise Multitone #AFE8E9, size 1, density 1, opacity 10%; прокручивается вместе со страницей */
   position: absolute; inset: 0; pointer-events: none; z-index: 0;
-  background-image: url("/noise.png");
+  background-image: url("/noise-8f84bbcb.png");
   background-size: 256px 256px;
   opacity: .055;
 }
