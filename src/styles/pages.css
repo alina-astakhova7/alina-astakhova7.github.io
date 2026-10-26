@@ -224,7 +224,5 @@ b, strong { font-weight: 700; }
     radial-gradient(ellipse 95% 135% at 68% 12%, #41504a 0%, #323a37 55%, #262a29 100%) padding-box,
     linear-gradient(to bottom left, rgba(232, 235, 233, .174), rgba(131, 133, 132, .081)) border-box;
 }
-@media (max-width: 599px) {
-  .case-mdk .media.tall { height: 800px; }
-  .case-mdk .media.tall img { width: auto; height: 100%; max-width: 100%; margin: 0 auto; object-fit: contain; }
-}
+/* МДК, мобилка: главная «До / После» в две колонки по 152, как в макете */
+@media (max-width: 599px) { .case-mdk .ba--main { grid-template-columns: 1fr 1fr; gap: 16px; } }
