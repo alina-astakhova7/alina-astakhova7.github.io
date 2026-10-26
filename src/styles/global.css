@@ -136,7 +136,9 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 @media (max-width: 599px) { .carousel__slide .box { aspect-ratio: var(--ar-sm); } }
 
 /* «живое» зерно: текстура каждые ~0.1 с прыгает в случайное место, как плёночный шум */
-.page-clip { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+/* зерно — в слое размером с экран (fixed), поэтому одинаковое на страницах любой длины */
+.page-clip { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+@media (max-width: 599px) { .grain { background-size: 440px 440px; } }
 @keyframes grain {
   0%   { transform: translate(0, 0); }
   11%  { transform: translate(-47px, 31px); }
