@@ -57,10 +57,11 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
   .bg-glow .g-bot, .is-home .bg-glow .g-bot { bottom: -273px; }
 }
 .grain {
-  position: absolute; inset: -120px; pointer-events: none; z-index: 0;
+  /* как в макете 1920: Noise Multitone #AFE8E9, size 1, density 1, opacity 10%; прокручивается вместе со страницей */
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
   background-image: url("/noise.png");
-  background-size: 70px auto;
-  opacity: .35;
+  background-size: 256px 256px;
+  opacity: .055;
 }
 .page { position: relative; z-index: 1; }
 
@@ -134,19 +135,5 @@ h1, h2, h3, h4 { margin: 0; font-weight: 500; }
 @media (max-width: 1023px) { .carousel__slide .box { aspect-ratio: var(--ar-md); } }
 @media (max-width: 599px) { .carousel__slide .box { aspect-ratio: var(--ar-sm); } }
 
-/* «живое» зерно: текстура каждые ~0.1 с прыгает в случайное место, как плёночный шум */
-/* зерно — в слое размером с экран (fixed), поэтому одинаковое на страницах любой длины */
-.page-clip { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-@keyframes grain {
-  0%   { transform: translate(0, 0); }
-  11%  { transform: translate(-47px, 31px); }
-  22%  { transform: translate(63px, -58px); }
-  33%  { transform: translate(-81px, -14px); }
-  44%  { transform: translate(22px, 77px); }
-  55%  { transform: translate(-36px, -69px); }
-  66%  { transform: translate(88px, 41px); }
-  77%  { transform: translate(-12px, -93px); }
-  88%  { transform: translate(55px, 8px); }
-  100% { transform: translate(0, 0); }
-}
-@media (prefers-reduced-motion: reduce) { .grain { animation: none; } }
+.page-clip { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+
