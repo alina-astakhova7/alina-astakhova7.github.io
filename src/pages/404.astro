@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Layout title="Страница не найдена — Алина Астахова" description="Такой страницы нет. Вернитесь на главную, чтобы посмотреть проекты.">
+  <div class="wrap nf">
+    <div class="top-avatar"><a class="avatar" href={`${base}/`} aria-label="На главную"><img src={`${base}/img/826b9712.webp`} alt="" width="80" height="80" /></a></div>
+    <main class="nf__body">
+      <p class="nf__code">404</p>
+      <h1 class="sec-title" data-reveal>Такой страницы нет</h1>
+      <p>Возможно, ссылка устарела. Все проекты — на главной.</p>
+      <a class="btn btn--secondary" href={`${base}/`}>На главную</a>
+    </main>
+  </div>
+</Layout>
+<style>
+  .nf { min-height: 100vh; display: flex; flex-direction: column; }
+  .nf__body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 16px; padding-bottom: 120px; }
+  .nf__code { font-weight: 200; font-style: italic; font-size: 28px; color: var(--muted); }
+  .nf__body .btn { margin-top: 12px; }
+</style>

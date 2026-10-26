@@ -1,0 +1,30 @@
+---
+import imgs from '../data/img.json';
+interface Slide { k: string; alt?: string; cap?: string }
+interface Props { slides: Slide[]; ar: string; arMd?: string; arSm?: string; overlay?: boolean; label: string }
+const { slides, ar, arMd = ar, arSm = arMd, overlay = false, label } = Astro.props;
+const meta = imgs as Record<string, { w: number; h: number; mode: string; bg?: string }>;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const hasCaps = slides.some((s) => s.cap);
+---
+<div class={`carousel ${overlay ? 'carousel--overlay' : ''}`} data-carousel role="region" aria-roledescription="carousel" aria-label={label} tabindex="0" style={`--ar-lg:${ar};--ar-md:${arMd};--ar-sm:${arSm}`}>
+  <div class="carousel__viewport">
+    <div class="carousel__track">
+      {slides.map((s, i) => (
+        <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label={`${i + 1} / ${slides.length}`}>
+          <div class="box" style={`background:${meta[s.k].bg ?? (meta[s.k].mode === 'FIT' ? 'transparent' : '#404040')}`}>
+            <img src={`${base}/img/${s.k}.webp`} alt={s.alt ?? ''} width={meta[s.k].w} height={meta[s.k].h} class={`fit-${meta[s.k].mode}`} loading="lazy" decoding="async" draggable="false" />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  <div class="dots" role="tablist">
+    {slides.map((_, i) => <button type="button" aria-label={`Слайд ${i + 1}`} aria-current={i === 0 ? 'true' : 'false'}></button>)}
+  </div>
+  {hasCaps && (
+    <div class="carousel__caps" aria-live="polite">
+      {slides.map((s, i) => <p class={`carousel__cap ${i === 0 ? 'on' : ''}`}>{s.cap}</p>)}
+    </div>
+  )}
+</div>

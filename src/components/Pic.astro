@@ -1,0 +1,17 @@
+---
+import imgs from '../data/img.json';
+interface Props { k: string; alt?: string; ar?: string; cls?: string; eager?: boolean }
+const { k, alt = '', ar, cls = '', eager = false } = Astro.props;
+const m = (imgs as Record<string, { w: number; h: number; mode: string; bg?: string }>)[k];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const src = `${base}/img/${k}.webp`;
+---
+{ar ? (
+  <div class={`box ${cls}`} style={`${ar === "css" ? "" : `aspect-ratio:${ar};`}background:${m.bg ?? (m.mode === "FIT" ? "transparent" : "#404040")}`}>
+    <img src={src} alt={alt} width={m.w} height={m.h} class={`fit-${m.mode}`} loading={eager ? 'eager' : 'lazy'} decoding="async" draggable="false" />
+  </div>
+) : (
+  <div class={`media ${m.bg ? '' : 'media--plain'} ${cls}`} style={m.bg ? `background:${m.bg}` : ''}>
+    <img src={src} alt={alt} width={m.w} height={m.h} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+  </div>
+)}

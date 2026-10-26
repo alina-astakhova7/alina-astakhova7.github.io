@@ -1,0 +1,8 @@
+---
+interface Props { cls?: string }
+const { cls = '' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<a class={`btn ${cls}`} href="https://t.me/flying_tiare" target="_blank" rel="noopener">TG</a>
+<a class={`btn ${cls}`} href={`${base}/cv.pdf`} target="_blank" rel="noopener">CV</a>
+<a class={`btn ${cls}`} href="mailto:zeytin01@mail.ru">Email</a>

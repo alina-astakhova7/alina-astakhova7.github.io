@@ -1,0 +1,45 @@
+---
+import Layout from './Layout.astro';
+import Contacts from '../components/Contacts.astro';
+interface Props { label: string; title: string; tags: string[]; tagsHideMobile?: number[]; description: string }
+const { label, title, tags, tagsHideMobile = [], description } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const home = `${base}/`;
+---
+<Layout title={`${title} — Алина Астахова`} description={description}>
+  <div class="wrap">
+    <header class="case-top">
+      <a href={home} class="avatar" aria-label="На главную"><img src={`${base}/img/826b9712.webp`} alt="Алина Астахова" width="80" height="80" /></a>
+      <nav class="case-nav" aria-label="Навигация">
+        <a class="btn btn--secondary back" href={home}>Назад</a>
+        <a href={home} class="avatar ava-mob" aria-label="На главную"><img src={`${base}/img/826b9712.webp`} alt="" width="40" height="40" /></a>
+        <div class="btns"><Contacts /></div>
+      </nav>
+    </header>
+    <main class="case-card">
+      <div class="case-head">
+        <p class="label">{label}</p>
+        <div>
+          <h1 data-reveal>{title}</h1>
+          <p class="tags">
+            {tags.map((t, i) => (
+              <>
+                {i > 0 && <span class={tagsHideMobile.includes(i) || (i === 1 && tagsHideMobile.includes(0)) ? 'm-hide' : ''} aria-hidden="true">/</span>}
+                <span class={tagsHideMobile.includes(i) ? 'm-hide' : ''}>{t}</span>
+              </>
+            ))}
+          </p>
+        </div>
+      </div>
+      <slot />
+    </main>
+    <footer class="case-foot">
+      <a class="btn btn--secondary btn-back" href={home}>Назад</a>
+      <div class="contacts-mini">
+        <div class="btns"><Contacts /></div>
+        <p class="welcome">You’re welcome! :)</p>
+      </div>
+    </footer>
+    <div class="case-end"></div>
+  </div>
+</Layout>
