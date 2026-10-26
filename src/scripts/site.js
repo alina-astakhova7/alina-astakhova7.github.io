@@ -64,27 +64,22 @@ document.querySelectorAll('[data-carousel]').forEach((root) => {
     slides.forEach((s, k) => s.setAttribute('aria-hidden', k === idx ? 'false' : 'true'));
   };
 
-  vp.addEventListener('pointerdown', (e) => {
-    if (e.button !== 0) return;
-    dragging = true; decided = false; horizontal = false; dx = 0;
-    startX = e.clientX; startY = e.clientY; pid = e.pointerId;
-  });
-  vp.addEventListener('pointermove', (e) => {
-    if (!dragging || e.pointerId !== pid) return;
-    const mx = e.clientX - startX, my = e.clientY - startY;
+  const start = (x, y) => { dragging = true; decided = false; horizontal = false; dx = 0; startX = x; startY = y; };
+  // returns true while the gesture is a horizontal drag (caller then blocks page scroll)
+  const move = (x, y) => {
+    if (!dragging) return false;
+    const mx = x - startX, my = y - startY;
     if (!decided) {
-      if (Math.abs(mx) < 6 && Math.abs(my) < 6) return;
+      if (Math.abs(mx) < 6 && Math.abs(my) < 6) return false;
       decided = true; horizontal = Math.abs(mx) > Math.abs(my);
-      if (!horizontal) { dragging = false; return; }
-      vp.setPointerCapture(pid);
+      if (!horizontal) { dragging = false; return false; }
       vp.classList.add('dragging');
     }
     dx = mx;
-    // rubber band at the ends
-    if ((idx === 0 && dx > 0) || (idx === n - 1 && dx < 0)) dx *= 0.35;
+    if ((idx === 0 && dx > 0) || (idx === n - 1 && dx < 0)) dx *= 0.35; // rubber band at the ends
     set(-idx * width() + dx, false);
-    e.preventDefault();
-  });
+    return true;
+  };
   const end = () => {
     if (!dragging) return;
     dragging = false;
@@ -93,9 +88,31 @@ document.querySelectorAll('[data-carousel]').forEach((root) => {
     const t = width() * 0.2;
     if (dx <= -t) go(idx + 1); else if (dx >= t) go(idx - 1); else go(idx);
   };
-  vp.addEventListener('pointerup', end);
-  vp.addEventListener('pointercancel', end);
-  vp.addEventListener('lostpointercapture', end);
+
+  // touch: native touch events (reliable on iOS/Android)
+  vp.addEventListener('touchstart', (e) => { if (e.touches.length === 1) start(e.touches[0].clientX, e.touches[0].clientY); }, { passive: true });
+  vp.addEventListener('touchmove', (e) => {
+    if (e.touches.length !== 1) return;
+    if (move(e.touches[0].clientX, e.touches[0].clientY) && e.cancelable) e.preventDefault();
+  }, { passive: false });
+  vp.addEventListener('touchend', end);
+  vp.addEventListener('touchcancel', end);
+
+  // mouse / pen: pointer events
+  vp.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'touch' || e.button !== 0) return;
+    start(e.clientX, e.clientY); pid = e.pointerId;
+  });
+  vp.addEventListener('pointermove', (e) => {
+    if (e.pointerType === 'touch' || e.pointerId !== pid) return;
+    const wasDecided = decided;
+    if (move(e.clientX, e.clientY)) {
+      if (!wasDecided) { try { vp.setPointerCapture(pid); } catch (_) {} }
+      e.preventDefault();
+    }
+  });
+  vp.addEventListener('pointerup', (e) => { if (e.pointerType !== 'touch') { end(); pid = null; } });
+  vp.addEventListener('pointercancel', (e) => { if (e.pointerType !== 'touch') { end(); pid = null; } });
   vp.addEventListener('dragstart', (e) => e.preventDefault());
   dots.forEach((d, k) => d.addEventListener('click', () => go(k)));
   root.addEventListener('keydown', (e) => {
