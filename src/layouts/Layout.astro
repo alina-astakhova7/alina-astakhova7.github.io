@@ -35,7 +35,7 @@ const url = site + Astro.url.pathname;
 </head>
 <body class={home ? 'is-home' : ''}>
   <div class="page-clip" aria-hidden="true"><div class="grain"></div></div>
-  <div class="bg-glow" aria-hidden="true"><i class="g-top"></i><i class="g-bot"></i></div>
+  <div class="bg-glow" aria-hidden="true"></div>
   <div class="page"><slot /></div>
   <script>import '../scripts/site.js';</script>
 </body>
