@@ -210,3 +210,17 @@ b, strong { font-weight: 700; }
 
 /* МДК: подписи «До» / «После» — Inter Medium 16, #E8EBE9 */
 .case-mdk .ba figcaption, .case-mdk .after-cap { font-weight: 500; font-size: 16px; color: var(--text); }
+
+/* Блоки с цифрами и схема: заливка в стиле catsberry + градиентная обводка (из Figma, кейс Терма) */
+.metric, .metric--strong, .flow__box {
+  border: 1px solid transparent;
+  background:
+    radial-gradient(ellipse 95% 135% at 68% 12%, #343c39 0%, #2b302e 55%, #232625 100%) padding-box,
+    linear-gradient(to bottom left, rgba(232, 235, 233, .06), rgba(131, 133, 132, .09)) border-box;
+}
+.flow__box--end {
+  border: 1.5px solid transparent;
+  background:
+    radial-gradient(ellipse 95% 135% at 68% 12%, #41504a 0%, #323a37 55%, #262a29 100%) padding-box,
+    linear-gradient(to bottom left, rgba(232, 235, 233, .174), rgba(131, 133, 132, .081)) border-box;
+}
