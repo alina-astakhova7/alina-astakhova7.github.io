@@ -245,3 +245,8 @@ b, strong { font-weight: 700; }
   .metrika-note-m { display: block; margin-top: 8px; font: 400 8px/10px 'Inter', sans-serif; color: rgba(232, 235, 233, .3); -webkit-text-size-adjust: none; }
   .metrika-note-m + main .projects { margin-top: 42px; }
 }
+
+/* Карточки на главной: заголовок + строка результата (как в компоненте Figma) */
+.card__title { color: #fff; }
+.card__result { margin-top: 4px; font-weight: 400; font-size: 16px; line-height: 1.2; color: var(--text); }
+@media (max-width: 599px) { .card__result { font-size: 12px; } }

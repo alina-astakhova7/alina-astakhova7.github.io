@@ -33,14 +33,7 @@ const arrow = `<svg class="card__arrow" viewBox="0 0 24 24" aria-hidden="true"><
                     <h3 class="card__title">{c.title}</h3>
                     <Fragment set:html={arrow} />
                   </div>
-                  <p class="tags">
-                    {c.tags.map((t, i) => (
-                      <>
-                        {i > 0 && <span class={c.hide.includes(i) || (i === 1 && c.hide.includes(0)) ? 'm-hide' : ''} aria-hidden="true">/</span>}
-                        <span class={c.hide.includes(i) ? 'm-hide' : ''}>{t}</span>
-                      </>
-                    ))}
-                  </p>
+                  <p class="card__result">{c.result}</p>
                 </div>
               </div>
               <Pic k={c.img} ar="css" cls={`card-img-${c.slug}`} eager={n === 0} />

@@ -1,8 +1,8 @@
 ---
 import Layout from './Layout.astro';
 import Contacts from '../components/Contacts.astro';
-interface Props { cls?: string; label: string; title: string; tags: string[]; tagsHideMobile?: number[]; description: string }
-const { cls = "", label, title, tags, tagsHideMobile = [], description } = Astro.props;
+interface Props { cls?: string; label: string; title: string; description: string }
+const { cls = "", label, title, description } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const home = `${base}/`;
 ---
@@ -21,14 +21,6 @@ const home = `${base}/`;
         <p class="label">{label}</p>
         <div>
           <h1 data-reveal>{title}</h1>
-          <p class="tags">
-            {tags.map((t, i) => (
-              <>
-                {i > 0 && <span class={tagsHideMobile.includes(i) || (i === 1 && tagsHideMobile.includes(0)) ? 'm-hide' : ''} aria-hidden="true">/</span>}
-                <span class={tagsHideMobile.includes(i) ? 'm-hide' : ''}>{t}</span>
-              </>
-            ))}
-          </p>
         </div>
       </div>
       <slot />
