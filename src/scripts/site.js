@@ -122,3 +122,15 @@ document.querySelectorAll('[data-carousel]').forEach((root) => {
   window.addEventListener('resize', () => go(idx, false));
   go(0, false);
 });
+
+/* ---------- Yandex.Metrika goals ---------- */
+const goal = (name, params) => { try { window.ym && window.ym(113822640, 'reachGoal', name, params); } catch (_) {} };
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a');
+  if (!a) return;
+  const href = a.getAttribute('href') || '';
+  if (href.includes('t.me/')) goal('tg');
+  else if (href.endsWith('cv.pdf')) goal('cv');
+  else if (href.startsWith('mailto:')) goal('email');
+  else if (a.classList.contains('card')) goal('open_case', { case: href.replace(/\//g, '') });
+});
