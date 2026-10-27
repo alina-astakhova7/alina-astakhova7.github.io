@@ -238,3 +238,10 @@ b, strong { font-weight: 700; }
 .metrika-note.hide { opacity: 0; }
 @media (max-width: 1023px) { .metrika-note { right: 40px; } }
 @media (max-width: 599px) { .metrika-note { right: 16px; bottom: 16px; } }
+/* на телефоне надпись стоит в потоке между шапкой и «Проекты» */
+.metrika-note-m { display: none; }
+@media (max-width: 599px) {
+  .metrika-note { display: none; }
+  .metrika-note-m { display: block; margin-top: 32px; font: 400 12px/1.2 'Inter', sans-serif; color: rgba(232, 235, 233, .3); }
+  .metrika-note-m + main .projects { margin-top: 32px; }
+}
