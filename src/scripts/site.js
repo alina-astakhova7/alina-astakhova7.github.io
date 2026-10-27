@@ -134,3 +134,11 @@ document.addEventListener('click', (e) => {
   else if (href.startsWith('mailto:')) goal('email');
   else if (a.classList.contains('card')) goal('open_case', { case: href.replace(/\//g, '') });
 });
+
+/* ---------- Metrika note: visible on the first screen only ---------- */
+const note = document.getElementById('metrika-note');
+if (note) {
+  const upd = () => note.classList.toggle('hide', window.scrollY > 40);
+  window.addEventListener('scroll', upd, { passive: true });
+  upd();
+}

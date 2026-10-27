@@ -228,3 +228,13 @@ b, strong { font-weight: 700; }
 @media (max-width: 599px) { .case-mdk .ba--main { grid-template-columns: 1fr 1fr; gap: 16px; } }
 /* Лента: на планшете и мобилке фото целиком, без обрезки (в макете FIT) */
 @media (max-width: 1023px) { .card .box.card-img-lenta { aspect-ratio: 2320 / 1126; } }
+
+/* Надпись про Метрику: внизу первого экрана главной, исчезает при прокрутке */
+.metrika-note {
+  position: fixed; z-index: 5; right: 60px; bottom: 32px;
+  font: 400 12px/1.2 'Inter', sans-serif; color: rgba(232, 235, 233, .3);
+  pointer-events: none; transition: opacity .3s ease;
+}
+.metrika-note.hide { opacity: 0; }
+@media (max-width: 1023px) { .metrika-note { right: 40px; } }
+@media (max-width: 599px) { .metrika-note { right: 16px; bottom: 16px; } }
