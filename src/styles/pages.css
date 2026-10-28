@@ -250,3 +250,26 @@ b, strong { font-weight: 700; }
 .card__title { color: #fff; }
 .card__result { margin-top: 4px; font-weight: 400; font-size: 16px; line-height: 1.2; color: var(--text); }
 @media (max-width: 599px) { .card__result { font-size: 12px; } }
+
+/* Авито: таблица гипотез (как в Figma 1920) */
+.hyp-wrap { display: grid; grid-template-columns: minmax(0, 1fr) 642px; gap: 20px; align-items: start; }
+.hyp {
+  padding: 4px 20px; border-radius: 8px; border: 1px solid transparent;
+  background:
+    radial-gradient(ellipse 95% 135% at 68% 12%, #343c39 0%, #2b302e 55%, #232625 100%) padding-box,
+    linear-gradient(to bottom left, rgba(232, 235, 233, .06), rgba(131, 133, 132, .09)) border-box;
+}
+.hyp__row { display: grid; grid-template-columns: 182px minmax(0, 1fr) 150px; gap: 16px; padding: 12px 0; border-bottom: 1px solid #323232; font-size: 14px; line-height: 1.3; }
+.hyp__row:last-child { border-bottom: 0; }
+.hyp__row b { font-weight: 500; }
+.hyp__row span { font-weight: 300; }
+.hyp__head span { font-weight: 400; color: rgba(232, 235, 233, .5); }
+.hyp__st--y { color: #00A035; }
+.hyp__st--p { color: #F59529; }
+.hyp__st--n { color: #E5484D; }
+@media (max-width: 1023px) { .hyp-wrap { grid-template-columns: 1fr; } }
+@media (max-width: 599px) {
+  .hyp { padding: 4px 16px; }
+  .hyp__head { display: none; }
+  .hyp__row { grid-template-columns: 1fr; gap: 4px; }
+}
