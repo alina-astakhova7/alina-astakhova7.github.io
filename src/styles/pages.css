@@ -273,3 +273,6 @@ b, strong { font-weight: 700; }
   .hyp__head { display: none; }
   .hyp__row { grid-template-columns: 1fr; gap: 4px; }
 }
+
+/* перенос строки только на десктопе (≥1024) */
+@media (max-width: 1023px) { .br-l { display: none; } }
