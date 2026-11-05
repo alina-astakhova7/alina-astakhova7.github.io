@@ -135,10 +135,13 @@ document.addEventListener('click', (e) => {
   else if (a.classList.contains('card')) goal('open_case', { case: href.replace(/\//g, '') });
 });
 
-/* ---------- Metrika note: visible on the first screen only ---------- */
-const note = document.getElementById('metrika-note');
-if (note) {
-  const upd = () => note.classList.toggle('hide', window.scrollY > 40);
-  window.addEventListener('scroll', upd, { passive: true });
-  upd();
+/* ---------- Metrika banner: stays until the button is pressed ---------- */
+const cookie = document.getElementById('cookie');
+const cookieOk = document.getElementById('cookie-ok');
+if (cookie && cookieOk) {
+  cookieOk.addEventListener('click', () => {
+    try { localStorage.setItem('metrika-ok', '1'); } catch (e) {}
+    cookie.classList.add('cookie--hide');
+    setTimeout(() => { cookie.hidden = true; }, 300);
+  });
 }

@@ -229,21 +229,23 @@ b, strong { font-weight: 700; }
 /* Лента: на планшете и мобилке фото целиком, без обрезки (в макете FIT) */
 @media (max-width: 1023px) { .card .box.card-img-lenta { aspect-ratio: 2320 / 1126; } }
 
-/* Надпись про Метрику: внизу первого экрана главной, исчезает при прокрутке */
-.metrika-note {
-  position: fixed; z-index: 5; right: 60px; bottom: 32px;
-  font: 400 12px/1.2 'Inter', sans-serif; color: rgba(232, 235, 233, .3);
-  pointer-events: none; transition: opacity .3s ease;
+/* Плашка про Метрику: закреплена внизу экрана, пока не нажать кнопку (как в Figma) */
+.cookie {
+  position: fixed; z-index: 20; right: 40px; bottom: 40px; width: 550px;
+  display: flex; align-items: center; gap: 12px; padding: 20px; border-radius: 12px;
+  background: rgba(251, 255, 253, .2);
+  -webkit-backdrop-filter: blur(50px); backdrop-filter: blur(50px);
+  transition: opacity .3s ease, transform .3s ease;
 }
-.metrika-note.hide { opacity: 0; }
-@media (max-width: 1023px) { .metrika-note { right: 40px; } }
-@media (max-width: 599px) { .metrika-note { right: 16px; bottom: 16px; } }
-/* на телефоне надпись стоит в потоке между шапкой и «Проекты» */
-.metrika-note-m { display: none; }
+.cookie[hidden] { display: none; }
+.cookie--hide { opacity: 0; transform: translateY(12px); }
+.cookie__text { flex: 1; margin: 0; font: 400 16px/1.2 'Inter', sans-serif; color: var(--text); }
+.cookie__btn { flex: none; width: 143px; min-height: 54px; white-space: normal; text-align: center; cursor: pointer; border: 0; }
 @media (max-width: 599px) {
-  .metrika-note { display: none; }
-  .metrika-note-m { display: block; margin-top: 8px; font: 400 8px/10px 'Inter', sans-serif; color: rgba(232, 235, 233, .3); -webkit-text-size-adjust: none; }
-  .metrika-note-m + main .projects { margin-top: 42px; }
+  .cookie { left: 16px; right: 16px; width: auto; flex-direction: column; align-items: stretch; gap: 8px; padding: 12px; }
+  .cookie__text { font-size: 12px; text-align: center; }
+  .cookie__btn { width: 100%; min-height: 40px; font-size: 12px; }
+  .cookie__br { display: none; }
 }
 
 /* Карточки на главной: заголовок + строка результата (как в компоненте Figma) */

@@ -49,6 +49,11 @@ const url = site + Astro.url.pathname;
   <div class="page-clip" aria-hidden="true"><div class="grain"></div></div>
   <div class="bg-glow" aria-hidden="true"></div>
   <div class="page"><slot /></div>
+  <div class="cookie" id="cookie" role="region" aria-label="Уведомление о Яндекс Метрике" hidden>
+    <p class="cookie__text">На сайте используется Яндекс Метрика, чтобы немного за вами следить. Исключительно в образовательных целях :)</p>
+    <button type="button" class="btn cookie__btn" id="cookie-ok">Сомнительно,<br class="cookie__br" /> но окэй</button>
+  </div>
+  <script is:inline>try{if(!localStorage.getItem('metrika-ok'))document.getElementById('cookie').hidden=false}catch(e){document.getElementById('cookie').hidden=false}</script>
   <script>import '../scripts/site.js';</script>
 </body>
 </html>
